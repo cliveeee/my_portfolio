@@ -1,0 +1,421 @@
+/* Reset Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+    --bg-color: #000;
+    --text-color: #fff;
+    --primary-color: #0095f6;
+    --secondary-color: #262626;
+    --accent-color: #404040;
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Global Styles */
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+}
+
+/* Navigation */
+.top-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 12px 16px;
+    background: var(--bg-color);
+    border-bottom: 1px solid var(--secondary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Main Content */
+.main-content {
+    padding: 60px 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Profile Section */
+.profile-section {
+    padding: 16px;
+}
+
+.profile-header {
+    display: flex;
+    gap: 2rem;
+}
+
+.profile-pic {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+}
+
+.profile-stats {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+
+.stat-number {
+    font-weight: 600;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #a8a8a8;
+}
+
+/* Buttons */
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.action-button {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    background: var(--secondary-color);
+    border: none;
+    border-radius: 0.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.action-button:hover {
+    background: var(--primary-color);
+}
+
+
+
+.profile-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+
+}
+
+/* Bio Text Styling */
+.bio-text {
+    line-height: 1.2; /
+    margin-bottom: 0.5rem;
+}
+
+/* Tabs */
+.tabs {
+    border-top: 1px solid var(--secondary-color);
+    display: flex;
+    margin-top: 1rem;
+}
+
+.tab {
+    flex: 1;
+    padding: 0.75rem;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tab.active {
+    border-top: 1px solid var(--text-color);
+    margin-top: -1px;
+}
+
+/* Content */
+.content-section {
+    padding: 1.25rem;
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+/* Grid Layouts */
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.post-item {
+    position: relative;
+    aspect-ratio: 1/1;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    background: var(--secondary-color);
+}
+
+.post-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Hide the description by default */
+.post-item .post-description {
+    opacity: 2;
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    transition: opacity 0.1s ease-in-out, visibility 0s 0.1s;
+}
+
+/* Show the description on hover */
+.post-item:hover .post-description {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease-in-out, visibility 0s 0s;
+}
+
+
+.post-item .post-description h3 {
+    font-size: 1.5rem;
+}
+
+.post-item .post-description p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* GitHub icon style */
+.github-icon {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 1rem;
+    color: var(--primary-color);
+}
+
+.github-icon i {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+/* adjust the layout of the images */
+.project-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* Grid Layout for Skills */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Skill Category Styling */
+.skill-category {
+    background: #1c1c1c;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Skill Logo Styling */
+.skill-logo {
+    width: 75px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.3s ease;
+}
+
+.skill-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
+}
+
+.skill-item:hover .skill-logo {
+    transform: scale(1.1);
+}
+
+.skill-item:hover {
+    background: #0095f6;
+}
+
+/* Skill List Flexbox */
+.skill-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Skill Category Title */
+.skill-category h3 {
+    font-size: 1.2rem;
+    color: #0095f6;
+    margin-bottom: 20px;
+}
+
+
+/* Style for all states of the website link */
+.website-link {
+    color: #0095f6;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Ensure the link remains blue when it's in different states */
+.website-link:link,
+.website-link:visited {
+    color: #0095f6;
+}
+
+/*  Define behavior when the link is clicked (active state) */
+.website-link:active {
+    color: #0095f6;
+}
+
+/* Optional: Add a hover effect */
+.website-link:hover {
+    color: #007bb5;
+}
+/* Ensure project images fit properly */
+.project-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Control the size of the container to keep a consistent aspect ratio */
+.post-item {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    border-radius: 8px;
+    background: white
+}
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .posts-grid {
+            grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-stats {
+        flex: 1;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .post-description {
+        padding: 10px;
+        font-size: 0.2rem;
+        line-height: 0.3;
+        overflow: visible;
+        background: rgba(0, 149, 246, 0.1);
+        color: #0095f6;
+    }
+
+    .post-item img {
+        width: 100%;
+        height: auto;
+    }
+
+    .post-description h3 {
+        font-size: clamp(0.9rem, 4vw, 0.5rem);
+        line-height: 0.5;
+        white-space: nowrap;
+
+        text-overflow: ellipsis;
+        max-width: 100%;
+        margin-bottom: 4px;
+    }
+
+    .post-description p {
+        color: rgba(0, 149, 246, 0.8);
+        display: -webkit-box;
+
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        line-height: 0.3;
+        font-size: 0.2rem;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .posts-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .post-description {
+        padding: 6px;
+        font-size: 0.3rem;
+    }
+
+    .post-item img {
+        height: auto;
+    }
+
+    .post-description h3 {
+        font-size: clamp(0.8rem, 3.5vw, 0.5rem);
+    }
+
+    .post-description p {
+
+        max-height: 1.5rem;
+    }
+}
